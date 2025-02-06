@@ -34,6 +34,7 @@ a {
 .section-title {
     margin: 0;
     font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .card {
@@ -61,66 +62,22 @@ a {
 
 /****** Header  ***********/
 
-header{
+header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-#logo{
-    width: 5%;
-    height: 5%;
-    padding-top: 10px;
+.header-logo{
+    padding-top: 2rem;
+    
+    height: 2rem;
 }
 
-nav{
+nav {
     display: flex;
-    justify-content: flex-end;
-}
-
-.navigation a {
-    padding-left: 50px;
-} 
-
-#heb:hover{
-    color: blue;
-    border-top: 3px solid blue;
-}
-
-
-/****** Recherche & filtres  ***********/
-
-fieldset {
-    position: relative;
-    border: none; 
-    padding: 0;
-}
-
-fieldset i{
-    color : black;
-}
-
-header, img{
-    padding-bottom : 20px;
-}
-
-button {
-    background-color: #0065FC;
-    color: white;
-    font-size : 10px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: none;
-    padding : 7px;
-}
-
-input::placeholder{
-    color: black;
-}
-
-input  {
-    border: none;       
-    outline: none;
-    padding: 7px;
+    align-items: center;
 }
 
 .navigation a {
@@ -130,75 +87,165 @@ input  {
     margin-right : 15px;
     display: inline-block;
     border-top: 2px solid transparent; 
-    width: fit-content; 
+    width: fit-content;
 }
 
 .navigation a:hover {
-    color: #0066cc;
-    border-top: 2px solid #0066cc; 
+    color: blue;
+    border-top: 2px solid blue;
 }
 
-.filtres {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 15px; 
+/****** Recherche ***********/
+
+.recherche {
+    display: block;
 }
 
-.filtres p {
+.rechercheHeader {
+    display: block;
+}
+
+.rechercheHeaderTitre {
+    margin-bottom: 0.5rem;
+}
+
+.rechercheHeaderSoustitre {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 0;
+}
+
+.rechercheFormulaire {
+    display: inline-flex;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.rechercheFormulaireInput::placeholder {
+    color: black;
+}
+
+.rechercheFormulaireWrapIcone {
+    background-color: #F2F2F2;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem 0 0 1rem;
+    text-align: center;
+}
+
+.rechercheFormulaireInput {
+    border-right: none;
+    border-left: none;
+    border-top: #F2F2F2 1px solid;
+    border-bottom: #F2F2F2 1px solid;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    width: 14rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-right: 10px;
+
 }
 
-.filtre-bouton {
-    background-color: white;
-    border: 1px solid grey;
-    color: black; 
-    padding: 8px 20px;
-    border-radius: 20px;
+.rechercheFormulaireValidation {
+    background-color: #0065FC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
+}
+
+.rechercheFormulaireTexteValidation {
+    background-color: #0065FC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+/****** Filtres  ***********/
+
+
+.rechercheFiltres {
+    display: block;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.rechercheFiltresTitre {
+    margin: 0 2rem 1rem 0;
     display: flex;
     align-items: center;
-    gap: 10px; 
-
 }
 
-.filtre-bouton i {
-    font-size: 18px; 
+.rechercheFiltresTitre {
+    display: block;
 }
 
-.filtre-bouton:hover {
-    background-color: rgba(0, 102, 204, 0.1); 
-    color: black; 
-    border-color: #0066cc; 
+.rechercheFiltresBlocFiltres {
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.rechercheFiltreSeul {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    border: 2px solid #d9d9d9;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
 
+.rechercheFiltreSeul:hover {
+    background-color: #DEEBFF;
+    cursor: pointer;
+}
 
+.rechercheFiltreIcone {
+    margin: 0 12px 0 20px;
+    font-size: 22px;
+}
+
+.rechercheFiltreIcone p {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 19.96px;
+    margin-right: 15px;
+}
+
+.rechercheFiltreIcone i {
+    margin: 0 0.5rem 0 0.5rem;
+}
 
 /****** Hebergements And Populaires ***********/
-
 
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
-    padding-bottom : 30px;
+    flex-wrap: wrap;
 }
 
 .hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
     border-radius: 20px;
     padding: 30px;
-    /* box-sizing: border-box; */
+    box-sizing: border-box; 
 }
-
-
 
 
 /****** Hebergements ***********/
 
 .hebergements {
-    width: 60%;
-    background-color: rgba(168, 168, 168, 0.15);
+    width: 65%;
 }
 
 .hebergements-title {
@@ -225,49 +272,31 @@ input  {
 
 .hebergements-cards img {
     width : 100%;
-    height: 124px;
+    height: 100px;
     display: block;
     object-fit : cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
 }
 
 .hebergements-cards .card-content {
-    width: 100%;
-    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    border: none;
 }
 
-.hebergements-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
 
-.hebergements-cards .card-subtitle {
-    display:inline-block;
-    flex-direction: column;
-    margin: 0;
-}
-
-.hebergements-cards .card-rating {
-    margin-bottom: 5px;
-}
+/****** Populaires ***********/
 
 .plus{
     padding-top: 25px;
     font-weight: 700;
 }
-
-
-
-
-/****** Populaires ***********/
 .populaires {
-    width: 33%;
-    background-color: rgba(168, 168, 168, 0.15);
+    width: 32%;
 }
 
 .populaires-title {
@@ -278,13 +307,13 @@ input  {
 
 .populaires-cards .card {
     display: flex;
-    margin-top: 25px;
+    margin-top: 33px;
 }
 
 .populaires-cards img {
-    width: 33%;
+    width : 33%;
     height: 136px;
-    padding: none;
+    object-fit: cover;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
@@ -313,14 +342,25 @@ input  {
 
 
 /****** Activités ***********/
+
 .activites {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px 0;
 }
 
 .activites-title {
+    margin-bottom: 15px;
+}
+
+.activityCard {
+    box-shadow: 0 0 20px #0000002e;
+    border-radius: 1rem;
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 .activites-cards {
@@ -336,6 +376,7 @@ input  {
     overflow: hidden; 
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 
 .activites-cards img {
@@ -356,6 +397,7 @@ input  {
     text-align: left;
 }
 
+
 /****** Footer ***********/
 
 footer {
@@ -364,7 +406,8 @@ footer {
     align-items: flex-start;
     width: 100%; 
     padding: 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    background-color: #F2F2F2; 
 }
 
 footer .f1, footer .f2, footer .f3 {
@@ -423,10 +466,34 @@ footer p {
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
-    
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+
+    .rechercheFormulaireTexteValidation {
+        display: none;
+    }
+
+    .rechercheFormulaireValidationIcone {
+        display: block;
+    }
+
+    .card {
+        width: 98%;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 767.97px) {
+
+    .rechercheFormulaireTexteValidation {
+        display: block;
+    }
+
+    .rechercheFormulaireValidationIcone {
+        display: none;
+    }
 }
