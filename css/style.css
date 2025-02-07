@@ -64,41 +64,45 @@ a {
 
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.header-logo{
-    padding-top: 2rem;
-    
-    height: 2rem;
+#logo{
+    height : 2rem;
+    padding-top : 2rem;
 }
 
 nav {
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-.navigation a {
+.navigation li {
     text-decoration: none;
     color: black;
-    padding: 10px 0px;
+    padding: 15px 0px;
     margin-right : 15px;
     display: inline-block;
     border-top: 2px solid transparent; 
     width: fit-content;
 }
 
-.navigation a:hover {
+.navigation li:hover {
     color: blue;
     border-top: 2px solid blue;
+}
+
+li{
+    list-style-type: none;
 }
 
 /****** Recherche ***********/
 
 .recherche {
     display: block;
+    padding-top : 30px;
 }
 
 .rechercheHeader {
@@ -435,7 +439,7 @@ footer p {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width : 768px) {
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -468,8 +472,16 @@ footer p {
     }
 }
 
+@media (max-width: 872px) {
+    .rechercheFiltresBlocFiltres{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        size: 100%;
+    }
+}
+
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
 
     .rechercheFormulaireTexteValidation {
         display: none;
@@ -479,12 +491,128 @@ footer p {
         display: block;
     }
 
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation li {
+        text-decoration: none;
+        color: black;
+        display: block;
+        margin-right : 15px;
+        border-top : none;
+        border-bottom: 2px solid gray; 
+
+    }
+    
+    .navigation li:hover {
+        color: blue;
+        border-top : none;
+        border-bottom: 2px solid blue;
+    }
+
+    .navigation{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .heb, .act{
+        width: 100%;
+    }
+
     .card {
-        width: 98%;
+        width: 100%;
         margin: 5px;
         justify-content: center;
         align-items: center;
     }
+
+    .rechercheFiltresBlocFiltres{
+        display: grid;
+        grid-template-columns: repeat (2, 1fr); 
+        size: 100%;
+    }
+
+    .hebergements-and-populaires {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .hebergements {
+        background-color : white !important;
+        width: 100%;
+    }
+
+    .populaires {
+        background-color: #d9d9d9;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+
+
+    .hebergements-cards{
+        display : grid;
+        grid-column: auto;
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        width: 100%;
+    }
+
+    .hebergements-and-populaires section {
+        padding: 20px;
+    }
+
+
+    .activites-cards {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        width: 100%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%; 
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #F2F2F2; 
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navigation ul {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation li {
+        flex: 1;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0;
+        border-bottom: 2px solid gray;
+        width: 50%;
+    }
+
+    .navigation li:hover {
+        color: blue;
+        border-bottom: 2px solid blue;
+    }
+
 }
 
 @media (min-width: 767.97px) {
@@ -496,4 +624,5 @@ footer p {
     .rechercheFormulaireValidationIcone {
         display: none;
     }
+
 }
