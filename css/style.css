@@ -551,6 +551,10 @@ footer p {
     flex-direction: column-reverse;
   }
 
+  .hebergements-and-populaires section{
+    border-radius: 0px;
+  }
+
   .hebergements {
     background-color: white !important;
     padding: 0 20px;
@@ -645,9 +649,11 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    
     .rechercheFiltresBlocFiltres {
         grid-template-columns: repeat(2, minmax(120px, 1fr)); 
-        gap: 8px; 
+        gap: 8px;
+    }
 
     .rechercheFiltreSeul {
         flex: 1; 
@@ -675,6 +681,4 @@ footer p {
         width: 22px; /* Ajustement proportionnel */
         height: 22px;
     }
-}
-
 }
